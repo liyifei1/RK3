@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="one">
+            <b>身份证:</b>
+            <input type="text" placeholder="身份证">
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        $(".one input").on("input", function() {
+            var a = $(this).val();
+            // if (typeof a != "number") {
+            //     return
+            // }
+            if (a.length > 18) {
+                return;
+            }
+            var days = a.substr(6, 8);
+            var day = a.substr(14, 4);
+            var a = day.split(" ");
+            console.log(a.splice(0, 1, "****"));
+            // console.log(days)
+        });
+    </script>
+</body>
+
+</html>
